@@ -1,0 +1,108 @@
+/* All styles scoped via #lsa-panel to avoid colliding with LinkedIn's CSS. */
+#lsa-panel {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 340px;
+  max-height: 70vh;
+  background: #1a1a1a;
+  color: #f5f5f5;
+  border: 1px solid #2f2f2f;
+  border-radius: 10px;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.45);
+  font: 13px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  z-index: 2147483600;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+#lsa-panel.lsa-collapsed .lsa-body,
+#lsa-panel.lsa-collapsed .lsa-flash { display: none; }
+
+#lsa-panel .lsa-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #0f0f0f;
+  border-bottom: 1px solid #2a2a2a;
+}
+#lsa-panel .lsa-title { font-weight: 600; font-size: 12px; letter-spacing: 0.02em; }
+#lsa-panel .lsa-collapse {
+  background: transparent;
+  color: inherit;
+  border: 1px solid #333;
+  border-radius: 4px;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  line-height: 1;
+}
+#lsa-panel .lsa-collapse:focus-visible { outline: 2px solid #4c8bf5; outline-offset: 1px; }
+
+#lsa-panel .lsa-body { padding: 12px; overflow-y: auto; }
+#lsa-panel .lsa-form { display: flex; flex-direction: column; gap: 10px; }
+#lsa-panel .lsa-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 11px; color: #aaa;
+}
+#lsa-panel .lsa-pill {
+  padding: 2px 8px; border-radius: 999px; font-size: 11px;
+  background: #2a2a2a; color: #ddd; text-transform: lowercase;
+}
+#lsa-panel .lsa-pill-sent { background: #1f3b1f; color: #9fe19f; }
+#lsa-panel .lsa-pill-replied { background: #1f2f4a; color: #9fbcff; }
+#lsa-panel .lsa-pill-declined { background: #3b1f1f; color: #ff9f9f; }
+
+#lsa-panel .lsa-textarea {
+  width: 100%;
+  background: #0f0f0f;
+  color: #f5f5f5;
+  border: 1px solid #2f2f2f;
+  border-radius: 6px;
+  padding: 8px;
+  font: inherit;
+  resize: vertical;
+  box-sizing: border-box;
+}
+#lsa-panel .lsa-textarea:focus-visible { outline: 2px solid #4c8bf5; outline-offset: 1px; }
+
+#lsa-panel .lsa-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+#lsa-panel .lsa-btn {
+  background: #2a2a2a;
+  color: #f5f5f5;
+  border: 1px solid #3a3a3a;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font: inherit;
+}
+#lsa-panel .lsa-btn:hover { background: #333; }
+#lsa-panel .lsa-btn:focus-visible { outline: 2px solid #4c8bf5; outline-offset: 1px; }
+#lsa-panel .lsa-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+#lsa-panel .lsa-btn-primary { background: #4c8bf5; border-color: #4c8bf5; }
+#lsa-panel .lsa-btn-primary:hover { background: #5a96ff; }
+
+#lsa-panel .lsa-status { margin: 0; }
+#lsa-panel .lsa-info { color: #ddd; }
+#lsa-panel .lsa-warn { color: #f5c66b; }
+#lsa-panel .lsa-error { color: #ff8e8e; }
+#lsa-panel .lsa-hint { color: #888; font-size: 11px; margin: 4px 0 0; }
+#lsa-panel .lsa-key {
+  display: block;
+  background: #0f0f0f;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  padding: 4px 6px;
+  margin: 6px 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  color: #bbb;
+  word-break: break-all;
+}
+#lsa-panel .lsa-flash {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-top: 1px solid #2a2a2a;
+  background: #111;
+}
