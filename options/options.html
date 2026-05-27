@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>LinkedIn Sheets Assistant — Options</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>LinkedIn Sheets Assistant</h1>
+    <p class="muted">Configure the Google Sheet, the OAuth client, and the column mapping. Settings are stored in <code>chrome.storage.sync</code>.</p>
+
+    <section>
+      <h2>1. Google OAuth client</h2>
+      <p class="muted">
+        Create a <strong>Web application</strong> OAuth client in Google Cloud and paste the client ID below.
+        Add this redirect URI to the client:
+      </p>
+      <pre id="redirectUri" class="code-block" aria-live="polite">loading…</pre>
+      <label class="field">
+        <span>OAuth Client ID</span>
+        <input id="clientId" type="text" placeholder="123-abc.apps.googleusercontent.com" autocomplete="off" />
+      </label>
+      <div class="row">
+        <button id="testAuth" type="button">Test sign-in</button>
+        <button id="signOut" type="button" class="secondary">Clear cached token</button>
+        <span id="authStatus" class="status" role="status" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Spreadsheet</h2>
+      <label class="field">
+        <span>Spreadsheet ID</span>
+        <input id="spreadsheetId" type="text" placeholder="from the URL: /spreadsheets/d/&lt;ID&gt;/edit" autocomplete="off" />
+      </label>
+      <label class="field">
+        <span>Sheet name (tab)</span>
+        <input id="sheetName" type="text" placeholder="Connections" autocomplete="off" />
+      </label>
+    </section>
+
+    <section>
+      <h2>3. Column mapping</h2>
+      <p class="muted">Match each field to the exact header text in your sheet.</p>
+      <div class="grid">
+        <label class="field"><span>profile URL column</span><input data-key="profile_url" type="text" /></label>
+        <label class="field"><span>first name column</span><input data-key="first_name" type="text" /></label>
+        <label class="field"><span>last name column</span><input data-key="last_name" type="text" /></label>
+        <label class="field"><span>template column</span><input data-key="template" type="text" /></label>
+        <label class="field"><span>status column</span><input data-key="status" type="text" /></label>
+        <label class="field"><span>last touched column</span><input data-key="last_touched_at" type="text" /></label>
+        <label class="field"><span>notes column</span><input data-key="notes" type="text" /></label>
+      </div>
+    </section>
+
+    <div class="footer">
+      <button id="save" type="button" class="primary">Save settings</button>
+      <span id="saveStatus" class="status" role="status" aria-live="polite"></span>
+    </div>
+  </main>
+  <script type="module" src="options.js"></script>
+</body>
+</html>

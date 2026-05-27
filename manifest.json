@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Sheets Assistant",
+  "version": "0.1.0",
+  "description": "Drafts DMs on LinkedIn profile pages from a Google Sheet row and writes sent/replied status back. Human-supervised, no auto-send.",
+  "permissions": ["identity", "storage", "activeTab"],
+  "host_permissions": [
+    "https://www.linkedin.com/*",
+    "https://sheets.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "LinkedIn Sheets Assistant"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/in/*"],
+      "js": ["lib/url.js", "lib/template.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  }
+}
